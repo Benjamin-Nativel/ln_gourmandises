@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,11 @@
     <title>LN_Gourmandises</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
 </head>
-<body class="min-h-screen max-w-7xl mx-auto bg-white">
+
+<body class="min-h-screen mx-auto bg-white max-w-7xl bg-[url('/storage/img/bg.svg')]">
     <header>
         @include('components.parts.header')
     </header>
@@ -22,4 +25,5 @@
         @include('components.parts.footer')
     </footer>
 </body>
+
 </html>

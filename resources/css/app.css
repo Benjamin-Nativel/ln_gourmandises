@@ -11,3 +11,26 @@ html{
     background-size: cover;
 }
 
+[x-cloak] {
+    display: none;
+}
+
+[v-cloak] {
+    display: none;
+  }
+
+
+ /* boostrap-carousel  */
+ .owl-item > div {
+    cursor: pointer;
+    margin: 6% 8%;
+    transition: margin 0.4s ease;
+  }
+  .owl-item.center > div {
+    cursor: auto;
+    margin: 0;
+  }
+  .owl-item:not(.center) > div:hover {
+    opacity: .75;
+  }
+/* end boostrap-carousel */
