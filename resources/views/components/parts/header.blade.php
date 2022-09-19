@@ -1,3 +1,8 @@
+@auth
+@role('Administrateur')
+<div class="bg-[#EFA48F] flex justify-end"><a href="/admin/produits">Dashboard</a>
+</div>
+@else
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
     @include('components.login')
@@ -6,7 +11,19 @@
         @include('components.register')
     </div>
 </div>
-
+@endrole 
+<a href="/logout">Se déconnecter</a>   
+@endauth
+@guest
+<div class="bg-[#EFA48F] flex justify-end">
+    <div class="flex items-center content-center justify-center px-10">
+    @include('components.login')
+    </div>
+    <div class="">
+        @include('components.register')
+    </div>
+</div>
+@endguest
 <header class="text-gray-600 body-font">
     <div clas="flex justify-center">
 <div class="flex items-center content-center justify-center">
