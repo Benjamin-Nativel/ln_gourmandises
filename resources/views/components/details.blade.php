@@ -42,34 +42,29 @@
      {{-- var img_bdd ={!! json_encode($images) !!};
  img_bdd[0], --}}
 
-     <div class="flex items-center justify-center h-auto ">
-         <div class="flex items-center content-center justify-center ">
-             <div class="flex flex-col justify-center w-2/3 space-y-1">
-                 <div class="flex items-center content-center justify-center mb-2 "><span>Lorem Ipsum is simply dummy
-                         text
-                         of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                         text
-                         ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                         type
-                         specimen book.</span></div>
-                 <div class="flex items-center content-center justify-center "><button
-                         class="bg-[#38ADA9] border-black m-4 rounded-md border-2 text-xl">4,5€/parts</button></div>
-             </div>
-         </div>
-         <div class="flex items-center content-center justify-center w-1/3 ">
-             <div class="flex flex-col justify-center w-2/3 space-y-1">
-                 <div class="flex items-center content-center justify-center mb-2 ">
-                     <p class="border-b-2 border-black">Autres détails</p>
-                 </div>
-                 <div class="flex items-center content-center justify-center h-24 ">
-                     <span>Lorem Ipsum is simply dummy text
-                         of the printing and typesetting industry.
 
+ <section class="text-gray-600 body-font">
+    <div class="container flex flex-col px-5 pt-16 mx-auto md:pt-4">
+      <div class="mx-auto lg:max-w-5xl">
+       
+        <div class="flex flex-col mt-10 sm:flex-row px-2">
+            <div class="pt-4 mt-4 text-center border-t border-black sm:w-2/3 sm:pl-8 sm:py-8 sm:border-r sm:border-t-0 sm:mt-0 sm:text-center sm:mb-3 p-1">
+                <p class="mb-2 text-lg leading-relaxed text-black">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party.
+                    man bun banh mi umami everyday carry hexagon locavore direct trade art party.
+                </p>
+                <button class="border rounded-lg p-2 border-black bg-[#38ADA9]">4,50/parts</button>
+            </div>
+            <div class="text-center sm:w-1/3 sm:pr-8 sm:py-8">
+              <div class="flex flex-col items-center justify-center text-center text-black">
+                  <h2 class="mt-4 text-lg font-medium">Autres détails</h2>
+                  <div class="w-12 h-1 mt-2 mb-4 bg-blue-800 rounded"></div>
+                  <p class="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                     </span>
-                 </div>
-             </div>
-         </div>
-
-     </div>
- </div>
+  

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[url('/storage/img/bg.svg')]">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
+    <script crossorigin="anonymous" defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
-<body class="min-h-screen mx-auto bg-white max-w-7xl bg-[url('/storage/img/bg.svg')]">
+<body class="min-h-screen mx-auto bg-white max-w-7xl ">
     <header>
         @include('components.parts.header')
     </header>
