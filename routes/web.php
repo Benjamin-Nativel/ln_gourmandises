@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProduitsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,7 @@ Route::get('/test', function () {
 Route::get('/details', function () {
     return view('details');
 });
+
+Route::get('/',[ProduitsController::class, 'getProduits']);
+
+Route::get('/filter',[ProduitsController::class,'getProduits'])->name('searchfilter');
