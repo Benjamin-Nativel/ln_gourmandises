@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('produits', function ($table) {
-            $table->tinyInteger('actif')->default(1);
-            
+            $table->tinyInteger('actif')->default(0);
+            $table->string('image')->nullable();
+            $table->string('photo2')->nullable();
+            $table->string('photo3')->nullable();
         });
     }
 

@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->id();
-            $table->string('images');
-            $table->timestamps();
-            $table->unsignedBigInteger('product_id'); 
-            $table->foreign('product_id')->references('id')->on('produits'); 
+        Schema::table('produits', function ($table) {
+            $table->tinyInteger('actu')->default(0);
+            
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        //
     }
 };

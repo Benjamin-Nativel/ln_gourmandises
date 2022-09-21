@@ -1,34 +1,34 @@
 @auth
 @role('Administrateur')
-<div class="bg-[#EFA48F] flex justify-end"><a href="/admin/produits">Dashboard</a>
+<div class="bg-[#EFA48F] flex justify-end"><a class="text-white mx-2" href="/admin/dashboard">Dashboard</a>
+    <a class="text-white mx-2" href="/logout">Se déconnecter</a>  
 </div>
-@else
+@endrole
+@role('Utilisateur')
+
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
-    @include('components.login')
+        <a href="/logout">Se déconnecter</a>  
     </div>
-    <div class="">
-        @include('components.register')
-    </div>
+    
 </div>
 @endrole 
-<a href="/logout">Se déconnecter</a>   
+ 
+
 @endauth
 @guest
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
-    @include('components.login')
+        <a href="/admin">Se connecter</a>  
     </div>
-    <div class="">
-        @include('components.register')
-    </div>
+    
 </div>
 @endguest
 <header class="text-gray-600 body-font">
     <div clas="flex justify-center">
 <div class="flex items-center content-center justify-center">
 
-    <img class="w-64 h-auto mr-5" src="/storage/img/logo_header.png" />
+    <img class="w-64 h-auto mr-5" src="/img/logo_header.png" />
 </div>
     </div>
     <div class="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">

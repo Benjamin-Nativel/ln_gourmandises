@@ -68,12 +68,13 @@ class ProduitsCrudController extends CrudController
         CRUD::field('description');
         CRUD::addField([ // Photo
             'name'      => 'image',
-            'label'     => 'Image',
-            'type'      => 'upload',
-            'prefix' => 'storage/',
+            'label'     => 'image',
+            'type'      => 'upload_multiple',
+            'prefix' => 'storage',
             'upload'    => true,
             'temporary' => 10,
         ]);
+        CRUD::field('actu');
         
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -101,6 +102,7 @@ class ProduitsCrudController extends CrudController
             'prefix' => 'storage/',
             'height' => '80px',
             'width' => 'auto',
+            
 
         ]);
     }

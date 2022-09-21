@@ -23,14 +23,19 @@ class ProduitsController extends Controller
         }
        
         $categories = Categories::all();
-
+        $actu = Produits::where('actu', '=', 1)->get();
         return view('index', [
             'produits' => $produits->paginate(8),  //a la place d'un get me demande pas pourquoi!
             'categories' => $categories,
             'q' => $q,
+            'actu' => $actu
         ]);
     }
 
 
+    
+        
+        
+    
 }
 

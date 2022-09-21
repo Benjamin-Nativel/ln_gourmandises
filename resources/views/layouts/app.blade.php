@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-[url('/storage/img/bg.svg')]">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8">
