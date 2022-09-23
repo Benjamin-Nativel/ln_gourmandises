@@ -48,6 +48,10 @@ class Produits extends Model
 public function cats(){
     return $this->belongsToMany(Categories::class,'categories_product','products_id','categories_id');
 }
+
+public function comms(){
+    return $this->hasMany(Comments::class, 'id_comm', 'user_id', 'product_id', 'content')->orderBy('created_at', 'DESC');
+}
     /*
     |--------------------------------------------------------------------------
     | SCOPES

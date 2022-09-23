@@ -12,7 +12,7 @@
     <script crossorigin="anonymous" defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
-<body class="min-h-screen mx-auto bg-white max-w-7xl ">
+<body class="min-h-screen mx-auto bg-white shadow-xl max-w-7xl shadow-orange-900 ">
     <header>
         @include('components.parts.header')
     </header>

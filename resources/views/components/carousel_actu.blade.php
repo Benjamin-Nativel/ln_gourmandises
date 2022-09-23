@@ -3,7 +3,7 @@
         <div class="swiper-wrapper">
             @foreach($actu as $actualite)
             <div class="swiper-slide">
-                {{-- <span class="absolute  mt-10"> {{$actualite->titre}}</span> --}}
+                {{-- <span class="absolute mt-10"> {{$actualite->titre}}</span> --}}
                 <img class="object-cover w-full h-96" src="/storage/{{$actualite->image[1]}}" alt="">
                    
             </div>

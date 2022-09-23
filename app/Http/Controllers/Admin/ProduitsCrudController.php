@@ -99,7 +99,7 @@ class ProduitsCrudController extends CrudController
             'name' => 'image',
             'label' => 'images',
             'type' => 'image',
-            'prefix' => 'storage/',
+            'prefix' => '',
             'height' => '80px',
             'width' => 'auto',
             

@@ -16,13 +16,48 @@ class ProduitsSeeder extends Seeder
      */
     public function run()
     {
-        Categories::create(['label' => ' Chocolat','description' => 'voici la description de la catégorie Chocolat']);
-        Categories::create(['label' => 'Créme','description' => 'voici la description de la catégorie Créme']);
-        Categories::create(['label' => 'Fruits','description' => 'voici la description de la catégorie Fruits']);
-       
+        Categories::create(['label' => ' Chocolat', 'description' => 'voici la description de la catégorie Chocolat']);
+        Categories::create(['label' => 'Créme', 'description' => 'voici la description de la catégorie Créme']);
+        Categories::create(['label' => 'Fruits', 'description' => 'voici la description de la catégorie Fruits']);
 
-        Produits::create(['titre' => 'Mignardises', 'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla', 'prix' => '3.5','image' => '  ', 'nb_parts' => '25', 'actif' => 1 ,'actu' => 1 ]); 
-        Produits::create(['titre' => 'Number-cakes', 'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla', 'prix' => '3.5',  'image' => ' 	 ', 'nb_parts' => '25','actif' => 1 ,'actu' => 1]);
-        
+
+        Produits::create([
+            'titre' => 'Mignardises',
+            'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla',
+            'prix' => '3.5',
+            'image' => '',
+            'nb_parts' => '25',
+            'actif' => 1,
+            'actu' => 1
+        ]);
+        Produits::create([
+            'titre' => 'Mignardises',
+            'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla',
+            'prix' => '3.5',
+            'image' => '',
+            'nb_parts' => '25',
+            'actif' => 1,
+            'actu' => 1
+        ]);
+        Produits::create([
+            'titre' => 'Mignardises',
+            'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla',
+            'prix' => '3.5',
+            'image' => '',
+            'nb_parts' => '25',
+            'actif' => 1,
+            'actu' => 1
+        ]);
+        Produits::create([
+            'titre' => 'Mignardises',
+            'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla',
+            'prix' => '3.5',
+            'image' => '',
+            'nb_parts' => '25',
+            'actif' => 1,
+            'actu' => 1
+        ]);
+        Produits::create(['titre' => 'Number-cakes', 'description' => 'Il s\'agit d\'un fraiser réaliser avec des produits locaux bla bla', 'prix' => '3.5',  'image' => '', 'nb_parts' => '25','actif' => 1 ,'actu' => 1]);
+
     }
 }

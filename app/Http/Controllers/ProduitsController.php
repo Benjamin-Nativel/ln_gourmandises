@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Commentaires;
 use App\Models\Produits;
 use Illuminate\Http\Request;
 
@@ -29,6 +30,18 @@ class ProduitsController extends Controller
             'categories' => $categories,
             'q' => $q,
             'actu' => $actu
+        ]);
+    }
+
+    public function getOneDetails($id){
+        $produit = Produits::find($id);
+       $produits = Produits::where('actif', '=', 1)->limit(3)->get();
+     
+        $comments = Commentaires::where('product_id', $id)->where('valid','1')->inRandomOrder()->limit(2)->get();
+        return view('detail', [
+            'produit' => $produit,
+            'produits' => $produits,
+            'comments' => $comments,
         ]);
     }
 

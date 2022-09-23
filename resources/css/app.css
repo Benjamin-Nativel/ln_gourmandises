@@ -6,7 +6,7 @@
 
 html{
     scroll-behavior: smooth;
-    background-image: url('/storage/img/bg.svg');
+    background-image: url('bg.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }

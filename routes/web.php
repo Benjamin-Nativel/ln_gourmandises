@@ -16,18 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('index');
-});
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+
+
+
 Route::get('/test', function () {
     return view('test');
 });
-Route::get('/details', function () {
-    return view('details');
-});
+
+
 
 Route::get('/home',[ProduitsController::class, 'getProduits']);
 Route::get('/filter',[ProduitsController::class,'getProduits'])->name('searchfilter');
@@ -39,3 +35,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::post('/contacts', [MailController::class, 'sendMessageGoogle'])->name('send.message.google');
+Route::get('/detail/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');

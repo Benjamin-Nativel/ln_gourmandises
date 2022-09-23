@@ -1,8 +1,8 @@
 <section class="text-gray-600 body-font">
     <div class="container px-5 mx-auto">
-        <div class="flex flex-wrap -m-4">
+        <div class="flex flex-wrap px-5 -m-4">
             @foreach($produits as $produit)
-            <a class="p-4 md:w-1/4" href="/detail/{{$produit->id}}">
+            <a class="p-4 md:w-1/3" href="/detail/{{$produit->id}}">
             <div class="">
                 <div class="h-full overflow-hidden border-opacity-60">
                     <img class="object-cover object-center w-full mb-2 rounded-lg shadow-2xl lg:h-48 md:h-36" src="/storage/{{$produit->image[0]}}" alt="blog">
