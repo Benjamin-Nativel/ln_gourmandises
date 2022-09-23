@@ -1,10 +1,10 @@
 @auth
 @role('Administrateur')
-<div class="bg-[#EFA48F] flex justify-end"><a class="text-white mx-2" href="/admin/dashboard">Dashboard</a>
-    <a class="text-white mx-2" href="/logout">Se déconnecter</a>  
+<div class="bg-[#EFA48F] flex justify-end"><a class="mx-2 text-white" href="/admin/dashboard">Dashboard</a>
+    <a class="mx-2 text-white" href="/logout">Se déconnecter</a>  
 </div>
-@endrole
-@role('Utilisateur')
+
+@else
 
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
