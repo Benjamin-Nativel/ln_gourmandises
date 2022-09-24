@@ -28,18 +28,19 @@ class ProduitsController extends Controller
             'actu' => $actu
         ]);
     }
-   
+    static public function getCountProds(){    
+   $produits = Produits::all();
+   $categories = Categories::all();
+   $commentaires = Commentaires::where('valid','1')->get();
+   return(compact('produits','commentaires','categories'));
+    }
+    
+
 
     
         
        
-        // $actu = Produits::where('actu', '=', 1)->get();
-        // return view('index', [
-        //     'produits' => $produits->paginate(8),  //a la place d'un get me demande pas pourquoi!
-        //     'categories' => $categories,
-            
-        //     'actu' => $actu
-        // ]);    }
+        
 
 
     public function getOneDetails($id){
