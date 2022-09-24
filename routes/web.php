@@ -27,7 +27,7 @@ Route::get('/test', function () {
 
 Route::get('/home',[ProduitsController::class, 'getProduits']);
 Route::get('/filter',[ProduitsController::class,'getProduits'])->name('searchfilter');
-
+// Route::post('/home',[ProduitsController::class, 'getProduits'])->name('home');
 
 Route::post('/registered', [AuthController::class, 'registered'])->name('registered');
 Route::post('/login', [AuthController::class, 'login'])->name('login');

@@ -44,6 +44,7 @@ class ProduitsCrudController extends CrudController
         CRUD::column('titre');
         CRUD::column('nb_parts');
         CRUD::column('prix');
+        
         CRUD::column('actif');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -64,7 +65,6 @@ class ProduitsCrudController extends CrudController
         CRUD::field('titre');
         CRUD::field('prix');
         CRUD::field('nb_parts');
-        CRUD::field('actif');
         CRUD::field('description');
         CRUD::addField([ // Photo
             'name'      => 'image',
@@ -74,8 +74,33 @@ class ProduitsCrudController extends CrudController
             'upload'    => true,
             'temporary' => 10,
         ]);
+        CRUD::field('actif');
         CRUD::field('actu');
+       CRUD::addField([
+            'label' => "Categories",
+            'type' => 'select_multiple',
+            'name' => 'categories', // the method that defines the relationship in your Model
+            'entity' => 'categories', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'model' => "App\Models\Categories", // foreign key model
+            'options'   => (function ($query) {
+                return $query->orderBy('label', 'ASC')->get();
+            }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
         
+           
+        ]);
+       
+        /**
+         * Fields can be defined using the fluent syntax or array syntax:
+         * - CRUD::field('price')->type('number');
+         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         */
+       
+
+        
+
+      
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
@@ -106,4 +131,6 @@ class ProduitsCrudController extends CrudController
 
         ]);
     }
+    
 }
+

@@ -1,4 +1,4 @@
-<section class="text-gray-600 body-font">
+<section class="pb-6 text-gray-600 body-font">
     <div class="container px-5 mx-auto">
         <div class="flex flex-wrap px-5 -m-4">
             @foreach($produits as $produit)

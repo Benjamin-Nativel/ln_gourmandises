@@ -45,7 +45,8 @@ class Produits extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-public function cats(){
+public function categories()
+{
     return $this->belongsToMany(Categories::class,'categories_product','products_id','categories_id');
 }
 

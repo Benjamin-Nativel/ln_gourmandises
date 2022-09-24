@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CategoriesRequest;
+use App\Http\Requests\CommentairesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CategoriesCrudController
+ * Class CommentairesCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CategoriesCrudController extends CrudController
+class CommentairesCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class CategoriesCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Categories::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/categories');
-        CRUD::setEntityNameStrings('categories', 'categories');
+        CRUD::setModel(\App\Models\Commentaires::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/commentaires');
+        CRUD::setEntityNameStrings('commentaires', 'commentaires');
     }
 
     /**
@@ -39,11 +39,11 @@ class CategoriesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('label');
-        CRUD::column('description');
+        CRUD::column('content');
         CRUD::column('created_at');
         CRUD::column('updated_at');
         
+        CRUD::column('valid');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,9 +60,12 @@ class CategoriesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::field('label');
-        CRUD::field('description');
-        CRUD::field('produits');
+        CRUD::setValidation(CommentairesRequest::class);
+
+        CRUD::field('content');
+        CRUD::field('product_id');
+        CRUD::field('user_id');
+        CRUD::field('valid');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

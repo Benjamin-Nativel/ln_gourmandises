@@ -33,8 +33,8 @@
     </div>
     <div class="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">
         <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
-            <a class="mr-5 hover:text-gray-900" href="/">Acceuil</a>
-            <a class="mr-5 hover:text-gray-900 " href="/#about" >A propos</a>
+            <a class="mr-5 hover:text-gray-900" href="/home">Acceuil</a>
+            <a class="mr-5 hover:text-gray-900 " href="/home#about" >A propos</a>
             <a class="mr-5 hover:text-gray-900" href="/contacts" >Contact</a>
             
           </nav>

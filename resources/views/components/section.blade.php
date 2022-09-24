@@ -1,7 +1,7 @@
 <section class="text-gray-600 body-font">
     <div class="container px-5 mx-auto">
         <div class="flex flex-wrap -m-4">
-            @foreach($produits as $produit)
+            @forelse($produits as $produit)
             <a class="p-4 md:w-1/4" href="/detail/{{$produit->id}}">
             <div class="">
                 <div class="h-full overflow-hidden border-opacity-60">
@@ -20,7 +20,15 @@
             </div>
             
         </a>
-        @endforeach
+        @empty
+        <div class="flex flex-col mx-auto mt-4">
+            <div class="mx-auto">
+                <i class="pt-20 mx-12 fa-solid fa-ban fa-6x"></i>
+                <h2 class="pt-4 text-xl ">Aucun produit trouvé</h2>
+            </div>
+        </div>
+        
+        @endforelse
         </div>
        
     </div>

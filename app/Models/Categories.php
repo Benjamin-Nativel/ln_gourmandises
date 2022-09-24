@@ -19,7 +19,7 @@ class Categories extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['categories_id', 'products_id'];    
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +34,9 @@ class Categories extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function produits(){
+        return $this->belongsToMany(Categories::class,'categories_product','categories_id','products_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
