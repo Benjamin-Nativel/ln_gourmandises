@@ -27,9 +27,10 @@
                     <div class="w-full max-w-md p-8 space-y-3 rounded-xl bg-[#EBF5FF] text-gray-100">
                         <img class="w-64 h-auto mr-5" src="/storage/img/logo_header.png" />
                         
-                        <form novalidate="" action="/login" class="space-y-6 ng-untouched ng-pristine ng-valid">
+                        <form novalidate="" action="/login" method="POST" class="space-y-6 ng-untouched ng-pristine ng-valid">
+                            @csrf
                             <div class="space-y-1 text-sm">
-                                <label for="username" class="block ml-2 text-left text-gray-400">Email</label>
+                                <label for="email" class="block ml-2 text-left text-gray-400">Email</label>
                                 <input type="text" name="email" id="email" placeholder="Email" class="w-full px-4 py-3 text-gray-100 bg-indigo-100 border-gray-700 rounded-md focus:bg-white">
                             </div>
                             <div class="space-y-1 text-sm">
