@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\ProduitsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/contacts', function () {
-    return view('contacts');
-});
+
+
+
 Route::get('/test', function () {
     return view('test');
 });
-Route::get('/details', function () {
-    return view('details');
-});
+
+
+
+Route::get('/home',[ProduitsController::class, 'getProduits']);
+Route::get('/filter',[ProduitsController::class,'getProduits'])->name('searchfilter');
+// Route::post('/home',[ProduitsController::class, 'getProduits'])->name('home');
+
+Route::post('/registered', [AuthController::class, 'registered'])->name('registered');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+Route::post('/contacts', [MailController::class, 'sendMessageGoogle'])->name('send.message.google');
+Route::get('/detail/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');

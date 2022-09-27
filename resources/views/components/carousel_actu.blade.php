@@ -1,18 +1,14 @@
 <div class="mx-5 my-2">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+            @foreach($actu as $actualite)
             <div class="swiper-slide">
-                <img class="object-cover w-full h-96" src="https://source.unsplash.com/user/erondu/3000x900"
-                    alt="apple watch photo" />
+                {{-- <span class="absolute mt-10"> {{$actualite->titre}}</span> --}}
+                <img class="object-cover w-full h-96" src="/storage/{{$actualite->image[1]}}" alt="">
+                   
             </div>
-            <div class="swiper-slide">
-                <img class="object-cover w-full h-96" src="https://source.unsplash.com/collection/190727/3000x900"
-                    alt="apple watch photo" />
-            </div>
-            <div class="swiper-slide">
-                <img class="object-cover w-full h-96" src="https://source.unsplash.com/collection/190728/3000x900"
-                    alt="apple watch photo" />
-            </div>
+            
+            @endforeach
         </div>
         <div class=" swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
