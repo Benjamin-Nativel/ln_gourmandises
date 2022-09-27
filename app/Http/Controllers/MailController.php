@@ -8,7 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
+
+
 {
+
+	public function contact(){
+		return view('contacts');
+	}
     public function sendMessageGoogle (Request $request) {
 
 		#1. Validation de la requête

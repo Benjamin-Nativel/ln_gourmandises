@@ -11,13 +11,13 @@
           <div class="w-1/2 p-2">
             <div class="relative">
               <label for="name" class="text-sm leading-7 text-gray-600">Nom</label>
-              <input type="text" id="name" name="name" value="{{backpack_user()->name}}" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
+              <input type="text" id="name" name="name" value="" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
             </div>
           </div>
           <div class="w-1/2 p-2">
             <div class="relative">
               <label for="prenom" class="text-sm leading-7 text-gray-600">Email</label>
-              <input type="text" id="email" name="email"value="{{backpack_user()->email}}" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
+              <input type="text" id="email" name="email"value="" class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
             </div>
           </div>
           <div class="w-full p-2 ">

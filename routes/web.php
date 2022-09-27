@@ -33,6 +33,6 @@ Route::post('/registered', [AuthController::class, 'registered'])->name('registe
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
+Route::get('/contacts', [MailController::class, 'contact'])->name('contact');
 Route::post('/contacts', [MailController::class, 'sendMessageGoogle'])->name('send.message.google');
 Route::get('/detail/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');
