@@ -1,8 +1,8 @@
-@php   use \App\Http\Controllers\produitsController; @endphp
+@php   use \App\Http\Controllers\ProduitsController; @endphp
 @extends(backpack_view('blank'))
 @section('content')
     @php
-        $allproduits = produitsController::getCountProds();
+        $allproduits = ProduitsController::getCountProds();
        
     @endphp
     @foreach ($allproduits as $produit)
