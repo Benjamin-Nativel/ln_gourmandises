@@ -1,28 +1,23 @@
+
 @auth
 @role('Administrateur')
 <div class="bg-[#EFA48F] flex justify-end"><a class="mx-2 text-white" href="/admin/dashboard">Dashboard</a>
     <a class="mx-2 text-white" href="/logout">Se déconnecter</a>  
 </div>
-
 @else
-
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
         <a href="/logout">Se déconnecter</a>  
     </div>
-    
-</div>
+  </div>
 @endrole 
- 
-
 @endauth
 @guest
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
         <a href="/admin">Se connecter</a>  
     </div>
-    
-</div>
+   </div>
 @endguest
 <header class="text-gray-600 body-font">
     <div clas="flex justify-center">

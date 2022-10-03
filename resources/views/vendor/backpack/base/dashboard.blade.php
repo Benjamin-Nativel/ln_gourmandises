@@ -3,23 +3,16 @@
 @section('content')
     @php
         $allproduits = ProduitsController::getCountProds();
-       
+       $prodCount = $allproduits['prodCount'];
+       $catCount = $allproduits['catCount'];
+       $comCount = $allproduits['comCount'];
     @endphp
     @foreach ($allproduits as $produit)
         @php
             $produit = $produit;
         @endphp
     @endforeach
-    @foreach ($allproduits as $categories)
-        @php
-            $categories = $categories;
-        @endphp
-    @endforeach
-    @foreach ($allproduits as $commentaires)
-        @php
-            $commentaires = $commentaires;
-                    @endphp
-    @endforeach
+    
     <section class="text-gray-600 body-font">
         <div class="">
             <h1 class="mb-3 text-2xl font-medium text-gray-900 title-font sm:text-3xl">Statistiques</h1>
@@ -29,7 +22,7 @@
                         class="relative h-24 px-8 pt-8 pb-24 overflow-hidden text-center bg-gray-100 bg-opacity-75 rounded-lg">
                         <h1 class="mb-1 text-xl font-medium text-gray-900 title-font sm:text-2xl">Nombre de produits inscrit</h1>
                         <div class="leading-relaxed">Total:<span
-                                class="pl-2 mb-1 text-xl font-medium tracking-widest text-blue-800 title-font">{{ count($produit) }}
+                                class="pl-2 mb-1 text-xl font-medium tracking-widest text-blue-800 title-font">{{ $prodCount }}
                         </span>
                         </div>
                     </div>
@@ -40,7 +33,7 @@
                         <h1 class="mb-1 text-xl font-medium text-gray-900 title-font sm:text-2xl">Nombre de categories</h1>
                         <div class="leading-relaxed">Total:<span
                                 class="mb-1 text-xl font-medium tracking-widest text-red-400 title-font">
-                                {{ count($categories) }}
+                                {{ $catCount}}
                         </span>
                         </div>
 
@@ -56,7 +49,7 @@
                         <h1 class="mb-1 text-xl font-medium text-gray-900 title-font sm:text-2xl">Commentaires a valider</h1>
                         <div class="leading-relaxed">Total:<span
                                 class="mb-1 text-xl font-medium tracking-widest text-red-400 title-font">
-                                {{ count($commentaires) }}
+                                {{ $comCount }}
                         </span>
                         <a  href="/admin/commentaires">Consulter
                         </a>

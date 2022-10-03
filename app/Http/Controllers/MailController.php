@@ -15,19 +15,22 @@ class MailController extends Controller
 	public function contact(){
 		return view('contacts');
 	}
+
     public function sendMessageGoogle (Request $request) {
 
 		#1. Validation de la requête
-		$this->validate($request, [ 'message' => 'bail|required' ]);
-        $this->validate($request,['name']);
-        $this->validate($request, ['email']);
-        $this->validate($request, ['sujet']);
+		$this->validate($request, [ 'message' => 'bail|required' ,
+		'email' => 'bail|required|email' ,
+		'name' => 'bail|required' ,
+		'subject' => 'bail|required'
+	]);
+        
 
 
 		#3. Envoi du mail
 		Mail::to("benjaminhenri.nativel31@gmail.com")
 						->queue(new Mailer($request->all()));
 
-		return back()->withText("Message envoyé");
+		return back()->with('Message_envoyé','ok');
 	}
 }

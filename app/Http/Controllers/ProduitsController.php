@@ -30,9 +30,12 @@ class ProduitsController extends Controller
     }
     static public function getCountProds(){    
    $produits = Produits::all();
+   $prodCount= count($produits);
    $categories = Categories::all();
-   $commentaires = Commentaires::where('valid','1')->get();
-   return(compact('produits','commentaires','categories'));
+   $catCount= count($categories);
+   $commentaires = Commentaires::where('valid','0')->get();
+    $comCount= count($commentaires);
+   return(compact('prodCount','comCount','catCount'));
     }
     
 
