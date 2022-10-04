@@ -1,21 +1,26 @@
+ 
  <div>
-
+    @php
+$prd = $produit->image
+@endphp
 
 
      <div class="w-2/3 mb-6 swiper mySwiper">
          <div class="swiper-wrapper">
+            @foreach($prd as $image)
              <div class="swiper-slide">
-                 <img class="object-cover w-full h-56" src="/storage/{{ $produit->image[0] }}" alt="">
+                 <img class="object-cover w-full h-56" src="/storage/{{$image }}" alt="">
 
              </div>
-             <div class="swiper-slide">
+             @endforeach
+             {{-- <div class="swiper-slide">
                  <img class="object-cover w-full h-56" src="/storage/{{ $produit->image[1] }}" alt="">
 
              </div>
              <div class="swiper-slide">
                  <img class="object-cover w-full h-56" src="/storage/{{ $produit->image[2] }}" alt="">
 
-             </div>
+             </div> --}}
 
          </div>
          <div class="swiper-button-next"></div>
@@ -60,10 +65,14 @@
                          </div>
                          <div class="text-center sm:w-1/3 sm:pr-8 sm:py-8">
                              <div class="flex flex-col items-center justify-center text-center text-black">
-                                 <h2 class="mt-4 text-lg font-medium">Autres détails</h2>
+                                 <h2 class="mt-4 text-lg font-medium px-2">Cliquer ci-dessous pour laisser un commentaire</h2>
                                  <div class="w-12 h-1 mt-2 mb-4 bg-blue-800 rounded"></div>
-                                 <p class="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin
-                                     sartorial venmo tbh hot chicken gentrify portland.</p>
+                                 <p class="text-base">
+                                    
+
+                                        @include('components.addComments')
+                                    
+                                </p>
                              </div>
 
                          </div>

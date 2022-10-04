@@ -6,6 +6,7 @@ use App\Models\Categories;
 use App\Models\Commentaires;
 use App\Models\Produits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProduitsController extends Controller
 {
@@ -48,7 +49,7 @@ class ProduitsController extends Controller
 
     public function getOneDetails($id){
         $produit = Produits::find($id);
-       $produits = Produits::where('actif', '=', 1)->limit(3)->get();
+       $produits = Produits::where('actif', '=', 1)->inRandomOrder()->limit(3)->get();
      
         $comments = Commentaires::where('product_id', $id)->where('valid','1')->inRandomOrder()->limit(2)->get();
         return view('detail', [
@@ -58,7 +59,23 @@ class ProduitsController extends Controller
         ]);
     }
 
+    public function addComm(Request $request, $id)
+    {
+        $this->validate($request, [
+            'commentaire' => 'required|min:5|',
+        ]);
 
+        $comments = new Commentaires();
+        $produit = Produits::where('id', '=', $id)->get();
+        $produit = Produits::find($id);
+        $comments->content = $request->contenu;
+        $comments->user_id = Auth::user()->id;
+        $comments->product_id = $id;
+
+        $comments->save();
+        $produit->update();
+        return redirect()->route('details', ['id' => $id]);
+    }
     
         
         

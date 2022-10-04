@@ -68,7 +68,7 @@ class ProduitsCrudController extends CrudController
     {
         $this->crud->setValidation([
             'titre' => 'required|min:2',
-            'image' => 'required',
+            'image.*' => 'required|min:1',
             'nb_parts' =>'required|numeric|min:1',
             'prix' =>'required|numeric',
             'description' =>'required|min:10',
@@ -76,7 +76,11 @@ class ProduitsCrudController extends CrudController
         CRUD::field('titre');
         CRUD::field('prix');
         CRUD::field('nb_parts');
-        CRUD::field('description');
+        CRUD::addField([
+            'name' => 'description',
+            'type' => 'textarea',
+        ]);
+
         CRUD::addField([ // Photo
             'name'      => 'image',
             'label'     => 'image',
@@ -127,7 +131,44 @@ class ProduitsCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        $this->crud->setValidation([
+            'titre' => 'required|min:2',
+            'image' => 'required',
+            'nb_parts' =>'required|numeric|min:1',
+            'prix' =>'required|numeric',
+            'description' =>'required|min:10',
+        ]);
+        CRUD::field('titre');
+        CRUD::field('prix');
+        CRUD::field('nb_parts');
+        CRUD::addField([
+            'name' => 'description',
+            'type' => 'textarea',
+        ]);
+        CRUD::addField([ // Photo
+            'name'      => 'image',
+            'label'     => 'image',
+            'type'      => 'upload_multiple',
+            'prefix' => 'storage',
+            'upload'    => true,
+            'temporary' => 10,
+        ]);
+        CRUD::field('actif');
+        CRUD::field('actu');
+       CRUD::addField([
+            'label' => "Categories",
+            'type' => 'select_multiple',
+            'name' => 'categories', // the method that defines the relationship in your Model
+            'entity' => 'categories', // the method that defines the relationship in your Model
+            'attribute' => 'label', // foreign key attribute that is shown to user
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'model' => "App\Models\Categories", // foreign key model
+            'options'   => (function ($query) {
+                return $query->orderBy('label', 'ASC')->get();
+            }), // force the related options to be a custom query, instead of all(); you can use this to filter the results show in the select
+        
+           
+        ]);
     }
     function getFieldsData()
     {

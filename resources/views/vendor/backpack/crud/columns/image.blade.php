@@ -14,6 +14,7 @@
 
     if (is_array($column['value'])) {
       $enc = json_encode($column['value'][0], JSON_UNESCAPED_SLASHES);
+      
       $string=str_replace('"','',$enc);
       $column['value'] = "/storage/".$string;
       

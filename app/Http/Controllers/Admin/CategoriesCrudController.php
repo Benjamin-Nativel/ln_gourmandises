@@ -66,7 +66,10 @@ class CategoriesCrudController extends CrudController
 
         ]);
         CRUD::field('label');
-        CRUD::field('description');
+        CRUD::addField([
+            'name' => 'description',
+            'type' => 'textarea',
+        ]);
         // CRUD::field('produits');
 
         /**
