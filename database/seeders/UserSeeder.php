@@ -31,5 +31,9 @@ class UserSeeder extends Seeder
         User::firstOrCreate(
             ['email' => 'admin@gmail.com'],  //si la valeur existe déja le seeder du dessous ne fera rien...
             ['name' => 'Administrateur', 'email' => 'admin@gmail.com',  'password' => bcrypt('abcdefg')])->assignRole('Administrateur');
-    }
+            User::firstOrCreate(
+                ['email' => 'nativel.laurence@gmail.com'], 
+                ['name' => 'Laurence', 'email' => 'nativel.laurence@gmail.com',  'password' => bcrypt('laulau123')])->assignRole('Administrateur');
+    
+}
 }
