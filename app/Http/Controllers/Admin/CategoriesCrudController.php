@@ -60,9 +60,14 @@ class CategoriesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
+        $this->crud->setValidation([
+            'label' => 'required|min:2|unique',
+            
+
+        ]);
         CRUD::field('label');
         CRUD::field('description');
-        CRUD::field('produits');
+        // CRUD::field('produits');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

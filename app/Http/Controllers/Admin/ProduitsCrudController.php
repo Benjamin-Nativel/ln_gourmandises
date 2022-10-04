@@ -39,7 +39,12 @@ class ProduitsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        $this->crud->setValidation([
+            'titre' => 'required|min:2',
+            'image' => 'required',
+
+        ]);
+
         $this->getFieldsData();
         CRUD::column('titre');
         CRUD::column('nb_parts');
@@ -61,7 +66,13 @@ class ProduitsCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        
+        $this->crud->setValidation([
+            'titre' => 'required|min:2',
+            'image' => 'required',
+            'nb_parts' =>'required|numeric|min:1',
+            'prix' =>'required|numeric',
+            'description' =>'required|min:10',
+        ]);
         CRUD::field('titre');
         CRUD::field('prix');
         CRUD::field('nb_parts');

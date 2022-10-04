@@ -20,13 +20,16 @@ class UserSeeder extends Seeder
     public function run()
     {
         # permissions
-        Permission::create(['name' => 'make-orders']);# roles
-        Role::create(['name' => 'Administrateur']);
-        Role::create(['name' => 'Utilisateur'])
-            ->givePermissionTo('make-orders');# users
-        User::create(['name' => 'Administrator', 'email' => 'adminr@gmail.com', 'password' => bcrypt('aBCDEFG')])
-            ->assignRole('Administrateur');
-            User::create(['name' => 'Chicken', 'email' => 'chickenbox@gmail.com', 'password' => bcrypt('ABCDEFG')])
-            ->assignRole('Utilisateur');
+        
+        Role::firstOrCreate(
+            ['name' => 'Administrateur'],
+            ['name' => 'Administrateur']);
+        Role::firstOrCreate(['name' => 'Utilisateur'],
+            ['name' => 'Utilisateur']);
+    
+            
+        User::firstOrCreate(
+            ['email' => 'admin@gmail.com'],  //si la valeur existe déja le seeder du dessous ne fera rien...
+            ['name' => 'Administrateur', 'email' => 'admin@gmail.com',  'password' => bcrypt('abcdefg')])->assignRole('Administrateur');
     }
 }

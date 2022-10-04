@@ -26,6 +26,7 @@ class CommentairesCrudController extends CrudController
      */
     public function setup()
     {
+        
         CRUD::setModel(\App\Models\Commentaires::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/commentaires');
         CRUD::setEntityNameStrings('commentaires', 'commentaires');
@@ -39,6 +40,12 @@ class CommentairesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->setValidation([
+            'content' => 'required|min:10',
+            
+
+        ]);
+
         CRUD::column('content');
         CRUD::column('created_at');
         CRUD::column('updated_at');
@@ -60,7 +67,9 @@ class CommentairesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CommentairesRequest::class);
+        $this->crud->setValidation([
+            'content' => 'required|min:10',
+        ]);
 
         CRUD::field('content');
         CRUD::field('product_id');

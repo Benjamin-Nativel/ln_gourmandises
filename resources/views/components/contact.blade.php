@@ -7,13 +7,13 @@
                 ?</p>
         </div>
         <div class="mx-auto lg:w-1/2 md:w-2/3">
-            <form action="/contacts" method="POST">
+            <form action="{{ Route('send.message.google') }}" method="POST">
                 @csrf
                 <div class="flex flex-wrap -m-2">
                     <div class="w-1/2 p-2">
                         <div class="relative">
                             <label for="name" class="text-sm leading-7 text-gray-600">Nom</label>
-                            <input requiered="" type="text" id="name" name="name" value=""
+                            <input requiered="" type="text" id="name" name="name" value="" required
                                 class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
                                
                               </div>
@@ -21,21 +21,21 @@
                     <div class="w-1/2 p-2">
                         <div class="relative">
                             <label for="prenom" class="text-sm leading-7 text-gray-600">Email</label>
-                            <input type="text" id="email" name="email"value=""
+                            <input type="email" id="email" name="email"value="" required
                                 class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
                         </div>
                     </div>
                     <div class="w-full p-2 ">
                         <div class="w-full ">
                             <label for="sujet" class="text-sm leading-7 text-gray-600">Sujet du message</label>
-                            <input type="sujet" id="sujet" name="sujet"
+                            <input type="sujet" id="sujet" name="sujet" required
                                 class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
                         </div>
                     </div>
                     <div class="w-full p-2">
                         <div class="relative">
                             <label for="message" class="text-sm leading-7 text-gray-600">Message</label>
-                            <textarea id="message" name="message"
+                            <textarea id="message" name="message"required
                                 value=""class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200"></textarea>
                         </div>
                     </div>

@@ -19,10 +19,8 @@ class MailController extends Controller
     public function sendMessageGoogle (Request $request) {
 
 		#1. Validation de la requête
-		$this->validate($request, [ 'message' => 'bail|required' ,
-		'email' => 'bail|required|email' ,
-		'name' => 'bail|required' ,
-		'subject' => 'bail|required'
+		$this->validate($request, [ 'message' => 'bail|required|min:10' 
+		
 	]);
         
 
@@ -31,6 +29,6 @@ class MailController extends Controller
 		Mail::to("benjaminhenri.nativel31@gmail.com")
 						->queue(new Mailer($request->all()));
 
-		return back()->with('Message_envoyé','ok');
+		return back();
 	}
 }

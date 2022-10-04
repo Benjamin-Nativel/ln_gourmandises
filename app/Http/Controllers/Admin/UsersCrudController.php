@@ -39,6 +39,13 @@ class UsersCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->setValidation([
+            'name' => 'required|min:2',
+            'prenom' => 'required',
+            'email' => 'required|unique',
+            'password' => 'required|min:6',
+        ]);
+
         CRUD::column('name');
         CRUD::column('prenom');
         CRUD::column('email');

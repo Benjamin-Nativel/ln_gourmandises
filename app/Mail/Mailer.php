@@ -21,8 +21,7 @@ class Mailer extends Mailable
 
     public function build()
     {
-        return $this->from("benjaminhenri.nativel31@gmail.com") // L'expéditeur
-                    ->subject("Message via Le site Web") // Le sujet
+        return $this->subject("Message via Ln_gourmandises") // Le sujet
                     ->view('emails.message-google'); // La vue
     }
 }
