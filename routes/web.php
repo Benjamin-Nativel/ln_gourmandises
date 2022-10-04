@@ -38,4 +38,4 @@ Route::middleware(['throttle:global'])->group(function ()  {
     Route::post('/contacts', [MailController::class, 'sendMessageGoogle'])->name('send.message.google');
 });
 Route::get('/detail/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');
-Route::post('/commentaires/{id}', [ProductController::class, 'addComm'])->name('addComm');
+Route::post('/commentaires/{id}', [ProduitsController::class, 'addComm'])->name('addComm');
