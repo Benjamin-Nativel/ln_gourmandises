@@ -13,14 +13,7 @@ $prd = $produit->image
 
              </div>
              @endforeach
-             {{-- <div class="swiper-slide">
-                 <img class="object-cover w-full h-56" src="/storage/{{ $produit->image[1] }}" alt="">
-
-             </div>
-             <div class="swiper-slide">
-                 <img class="object-cover w-full h-56" src="/storage/{{ $produit->image[2] }}" alt="">
-
-             </div> --}}
+            
 
          </div>
          <div class="swiper-button-next"></div>

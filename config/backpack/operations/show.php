@@ -15,7 +15,7 @@ return [
     'setFromDb'  => true,
 
     // Automatically add created_at and updated_at columns, if model has timestamps?
-    'timestamps' => true,
+    'timestamps' => false,
 
     // If model has SoftDeletes, allow the admin to access the Show page for
     // soft deleted items & add a deleted_at column to ShowOperation?

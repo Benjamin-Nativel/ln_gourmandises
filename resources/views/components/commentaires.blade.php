@@ -5,10 +5,11 @@
                 class="container flex flex-col w-full max-w-lg p-6 mx-auto text-white divide-y divide-black rounded-md bg-[#EBF5FF] ">
                 <div class="flex justify-between w-48 p-4">
                     <div class="flex space-x-4">
-                        <div>
-                            <img src="https://source.unsplash.com/100x100/?portrait" alt=""
-                                class="object-cover w-12 h-12 bg-gray-500 rounded-full">
+                        <div class="w-12 h-12 bg-[#38ADA9] rounded-full">
+                           <div id="name"
+                                class="text-4xl ml-3 text-red-400">
                         </div>
+                    </div>
                         <div>
                             <h4 class="font-bold text-black">{{ $comment->user->name }}</h4>
 
@@ -33,3 +34,9 @@
     @endforelse
 
 </div>
+<script>
+     var name = {!!json_encode($comment->user->name)!!};
+ console.log(name);
+  var initials = name.charAt(0).toUpperCase();
+  document.getElementById("name").innerHTML = initials;
+</script>

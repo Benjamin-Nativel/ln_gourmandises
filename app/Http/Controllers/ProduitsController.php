@@ -62,19 +62,19 @@ class ProduitsController extends Controller
     public function addComm(Request $request, $id)
     {
         $this->validate($request, [
-            'commentaire' => 'required|min:5|',
+            'contenu' => 'required|min:5|',
         ]);
 
         $comments = new Commentaires();
+        
         $produit = Produits::where('id', '=', $id)->get();
         $produit = Produits::find($id);
         $comments->content = $request->contenu;
         $comments->user_id = Auth::user()->id;
         $comments->product_id = $id;
-
         $comments->save();
         $produit->update();
-        return redirect()->route('details', ['id' => $id]);
+        return redirect()->route('getDetails', ['id' => $id]);
     }
     
         

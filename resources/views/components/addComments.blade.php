@@ -4,7 +4,12 @@
             <span class="px-4 hover:text-blue-400">Laisser un commentaire</span>
         </button>
     @endauth
+@guest
+    <a href="/admin/login">
 
+        <button   class="px-4 hover:text-blue-400">Laisser un commentaire</button>
+    </a>
+@endguest
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog"
         aria-modal="true">
         <div class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
@@ -24,11 +29,13 @@
                     {{-- @click="modelOpen = false" --}}
                     <div class="w-full max-w-md px-20 py-8 space-y-3 text-gray-100 bg-[#EBF5FF] rounded-xl">
                         <form action="/commentaires/{{ $produit->id }}" class="space-y-6 ng-untouched ng-pristine ng-valid"
-                            method="post">
+                            method="post"
+                            
+                           >
                             @csrf
                             <div class="space-y-1 text-sm">
-                                <label for="comms" class="block pb-2 text-gray-200">Laisser un commentaire</label>
-                                <textarea class="w-full px-4 py-3 text-gray-100 bg-gray-200 border-black rounded-md focus:border-teal-400"
+                                <label for="comms" class="block pb-2 text-black">Laisser un commentaire</label>
+                                <textarea class="w-full px-4 py-3 text-black bg-gray-200 border-black rounded-md focus:border-teal-400"
                                     rows="6" cols="30" minlength="5" name="contenu" placeholder="commenter..." required></textarea>
                             </div>
                             @auth
@@ -38,8 +45,8 @@
                             <input type="hidden" name="product_id" value="{{ $produit->id }}">
 
                             
-                            <button
-                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-teal-400 rounded hover:bg-teal-200 focus:bg-teal-200">Poster</button>
+                            <button type="submit" onsubmit="myButtonAdd.disabled = true; return true;" name="myButtonAdd"
+                                class="block w-full p-3 text-center text-gray-900 transition-colors duration-200 bg-[#38ADA9] rounded hover:bg-teal-200 focus:bg-teal-400">Poster</button>
                             </div>
                         </form>
                     </div>
