@@ -68,7 +68,7 @@ class CommentairesCrudController extends CrudController
     protected function setupCreateOperation()
     {
         $this->crud->setValidation([
-            'content' => 'required|min:10',
+            'content' => 'required|min:5',
         ]);
 
         CRUD::field('content');
@@ -92,7 +92,7 @@ class CommentairesCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->crud->setValidation([
-            'content' => 'required|min:10',
+            'content' => 'required|min:5',
         ]);
 
         CRUD::field('content');
