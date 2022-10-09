@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ProduitsController extends Controller
 {
     public function getProduits(Request $request){
-        $produits = Produits::where('actif', '=', 1);
+        $produits = Produits::where('actif', '=', 1)->orderBy('id', 'desc');
         $q = request()->input('q');
         if ($request->filled('categories')) {
             $categories = $request->categories;

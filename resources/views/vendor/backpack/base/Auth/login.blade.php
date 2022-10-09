@@ -3,7 +3,9 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-            <h3 class="mb-4 text-center"><img src="/img/logo_forms.png" alt="" ></h3>
+            <a href="/home">
+                <img class="pb-2 mx-auto" src="/img/logo_forms.png" alt="" >
+            </a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.login') }}">

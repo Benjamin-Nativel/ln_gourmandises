@@ -19,7 +19,7 @@ class Categories extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    protected $fillable = ['categories_id', 'products_id', 'label','description'];    
+    protected $fillable = ['categories_id', 'products_id', 'label'];    
     // protected $hidden = [];
     // protected $dates = [];
 

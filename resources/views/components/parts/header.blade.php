@@ -15,7 +15,8 @@
 @guest
 <div class="bg-[#EFA48F] flex justify-end">
     <div class="flex items-center content-center justify-center px-10">
-        <a href="/admin">Se connecter</a>  
+        <a class="mx-2" href="/admin/register">S'inscrire </a>
+        <a href="/admin">S'identifier</a>  
     </div>
    </div>
 @endguest
