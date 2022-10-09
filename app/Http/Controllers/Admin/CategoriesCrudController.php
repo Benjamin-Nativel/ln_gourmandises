@@ -39,6 +39,8 @@ class CategoriesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        
+
         CRUD::column('label');
         CRUD::column('description');
         CRUD::column('created_at');
@@ -61,7 +63,7 @@ class CategoriesCrudController extends CrudController
     protected function setupCreateOperation()
     {
         $this->crud->setValidation([
-            'label' => 'required|min:2|unique',
+            'label' => 'required|min:2',
             
 
         ]);

@@ -54,11 +54,11 @@ $prd = $produit->image
                              class="p-1 pt-4 mt-4 text-center border-t border-black sm:w-2/3 sm:pl-8 sm:py-8 sm:border-r sm:border-t-0 sm:mt-0 sm:text-center sm:mb-3">
                              <p class="mb-2 text-lg leading-relaxed text-black">{{ $produit->description }}</p>
                              </p>
-                             <button class="border rounded-lg p-2 border-black bg-[#38ADA9]">{{$produit->prix}} la parts</button>
+                             <button class="border rounded-lg p-2 border-black bg-[#38ADA9]">{{$produit->prix}} Par part</button>
                          </div>
                          <div class="text-center sm:w-1/3 sm:pr-8 sm:py-8">
                              <div class="flex flex-col items-center justify-center text-center text-black">
-                                 <h2 class="mt-4 text-lg font-medium px-2">Cliquer ci-dessous pour laisser un commentaire</h2>
+                                 <h2 class="px-2 mt-4 text-lg font-medium">Cliquer ci-dessous pour laisser un commentaire</h2>
                                  <div class="w-12 h-1 mt-2 mb-4 bg-blue-800 rounded"></div>
                                  <p class="text-base">
                                     

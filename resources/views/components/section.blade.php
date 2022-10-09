@@ -9,7 +9,7 @@
                     
                     <div class="flex flex-col items-center justify-center">
                         <div class="flex items-center content-center justify-center w-1/2 h-auto">
-                            <h2 class="mb-1 text-xs font-medium tracking-widest text-gray-400 title-font">{{$produit->titre}}
+                            <h2 class="mb-1 text-xs font-medium  tracking-widest text-[#DB3082] title-font">{{$produit->titre}}
                             </h2>
                         </div>
                         <div class="flex items-center content-center justify-center w-1/2 h-auto">
