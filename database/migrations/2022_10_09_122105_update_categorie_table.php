@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('categories', function ($table) {
-            $table->string('description')->nullable();
+            $table->string('description')->nullable()->change();
             
         });
     }
