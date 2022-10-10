@@ -27,15 +27,16 @@ Route::get('/test', function () {
 // Route::post('/home',[ProduitsController::class, 'getProduits'])->name('home');
 
 Route::get('/home',[ProduitsController::class, 'getProduits']);
+Route::get('/produit/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');
 Route::get('/produits/filter',[ProduitsController::class,'getProduits'])->name('searchfilter');
-
-Route::post('/registered', [AuthController::class, 'registered'])->name('registered');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
+Route::post('/commentaires/{id}', [ProduitsController::class, 'addComm']);
+Route::get('/mentions', function () {
+    return view('mentions');
+});
 Route::get('/contacts', [MailController::class, 'contact'])->name('contact');
 Route::middleware(['throttle:global'])->group(function ()  {
     Route::post('/contacts', [MailController::class, 'sendMessageGoogle'])->name('send.message.google');
 });
-Route::get('/produit/{id}', [ProduitsController::class, 'getOneDetails'])->whereNumber('id')->name('getDetails');
-Route::post('/commentaires/{id}', [ProduitsController::class, 'addComm']);
+Route::post('/registered', [AuthController::class, 'registered'])->name('registered');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

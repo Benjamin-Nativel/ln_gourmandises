@@ -9,17 +9,10 @@ class Produits extends Model
 {
     use CrudTrait;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
     protected $table = 'produits';
     
     protected $guarded = ['id'];
     
-
     protected $casts = [
         'image' => 'array'
     ];
@@ -34,11 +27,7 @@ class Produits extends Model
 
    
     }
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
+    
 public function categories()
 {
     return $this->belongsToMany(Categories::class,'categories_product','products_id','categories_id');

@@ -1,4 +1,3 @@
-
 <div class="relative text-gray-600 bg-slate-300 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col w-full mb-12 text-center">
@@ -13,15 +12,15 @@
                     <div class="w-1/2 p-2">
                         <div class="relative">
                             <label for="name" class="text-sm leading-7 text-gray-600">Nom</label>
-                            <input requiered="" type="text" id="name" name="name" value="" required
+                            <input  type="text" name="name" value="" required
                                 class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
-                               
-                              </div>
+
+                        </div>
                     </div>
                     <div class="w-1/2 p-2">
                         <div class="relative">
-                            <label for="prenom" class="text-sm leading-7 text-gray-600">Email</label>
-                            <input type="email" id="email" name="email"value="" required
+                            <label for="email" class="text-sm leading-7 text-gray-600">Email</label>
+                            <input type="email" id="email" name="email" value="" required
                                 class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-[#EBF5FF] bg-opacity-50 border border-gray-300 rounded outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200">
                         </div>
                     </div>
@@ -44,15 +43,18 @@
                             class="flex px-8 py-2 mx-auto text-lg text-white bg-[#38ADA9] border-0 rounded focus:outline-none hover:bg-[#375d5c]"
                             type="submit">Envoyer</button>
                     </div>
+                </div>
             </form>
             <div
                 class="flex flex-col items-center justify-center w-2/3 mx-auto mt-4 text-center border-t-2 border-black">
                 <div class="flex items-center content-center justify-center mt-4">Ou me contacter via les réseaux
                     sociaux</div>
                 <div class="flex items-center content-center justify-around mt-4 space-x-5">
-                    <div class="flex items-center content-center justify-center w-2/4 h-auto "> <a href=""><i
+                    <div class="flex items-center content-center justify-center w-2/4 h-auto "> <a
+                            href="https://www.facebook.com/Lngourmandises"><i
                                 class="h-auto text-black fa-brands fa-facebook-f"></i></a></div>
-                    <div class="flex items-center content-center justify-center w-2/4 h-auto"><a href=""><i
+                    <div class="flex items-center content-center justify-center w-2/4 h-auto"><a
+                            href="https://www.instagram.com/ln_gourmandises"><i
                                 class="text-black fa-brands fa-instagram"></i></a></div>
                 </div>
             </div>
